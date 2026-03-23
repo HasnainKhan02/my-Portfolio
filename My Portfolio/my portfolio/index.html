@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasnain Kabir | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: #0F172A;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hexagon-wrapper {
+            position: relative;
+            width: 320px;
+            height: 360px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            background: linear-gradient(135deg, #6366F1, #A855F7, #06B6D4);
+            padding: 5px;
+            /* Border thickness */
+        }
+
+        .hexagon-inner {
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            background: #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hexagon-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .glow-btn-primary {
+            background: linear-gradient(135deg, #F43F5E, #FB7185);
+            box-shadow: 0 0 20px rgba(244, 63, 94, 0.4);
+            transition: 0.3s;
+        }
+
+        .glow-btn-primary:hover {
+            box-shadow: 0 0 30px rgba(244, 63, 94, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Floating Bubbles Animation */
+        .bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            filter: blur(8px);
+            z-index: -1;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+
+            50% {
+                transform: translateY(-100px) translateX(50px);
+            }
+
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+        }
+
+        /* Custom Project Card Dynamics */
+        .group:hover .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: unset;
+            line-clamp: unset;
+        }
+
+        /* Glass hover pulse */
+        .glass {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass:hover {
+            background: rgba(255, 255, 255, 0.07);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        /* =========================
+   Large Tablets
+========================= */
+@media (max-width: 1024px) {
+    .hexagon-wrapper {
+        width: 260px;
+        height: 300px;
+    }
+
+    h2.text-6xl {
+        font-size: 48px;
+    }
+}
+
+/* =========================
+   Tablets
+========================= */
+@media (max-width: 768px) {
+
+    nav .glass {
+        padding: 12px 16px;
+    }
+
+    h2.text-6xl {
+        font-size: 38px;
+        line-height: 1.2;
+    }
+
+    .hexagon-wrapper {
+        width: 220px;
+        height: 250px;
+    }
+
+    .absolute.-bottom-10 {
+        position: relative;
+        bottom: 0;
+        margin-top: 20px;
+    }
+
+    section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+}
+
+/* =========================
+   Mobile
+========================= */
+@media (max-width: 640px) {
+
+    h2.text-6xl {
+        font-size: 32px;
+    }
+
+    .text-4xl {
+        font-size: 28px;
+    }
+
+    .hexagon-wrapper {
+        width: 180px;
+        height: 210px;
+    }
+
+    .glass.p-8 {
+        padding: 20px;
+    }
+
+    .grid {
+        gap: 20px;
+    }
+
+    .rounded-\[4rem\] {
+        border-radius: 2rem;
+    }
+
+    footer {
+        padding: 30px 10px;
+    }
+}
+
+/* =========================
+   Small Mobile
+========================= */
+@media (max-width: 400px) {
+
+    h2.text-6xl {
+        font-size: 26px;
+    }
+
+    .hexagon-wrapper {
+        width: 150px;
+        height: 180px;
+    }
+
+    .glow-btn-primary {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="bubble w-20 h-20 top-20 left-10"></div>
+    <div class="bubble w-32 h-32 bottom-20 right-20" style="animation-delay: -5s;"></div>
+
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl z-50">
+        <div class="glass rounded-2xl px-8 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-tighter" style="font-family: 'Montserrat';">Hasnain<span
+                    class="text-indigo-400">.Dev</span></h1>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
+                <a href="#" class="hover:text-white transition">Home</a>
+                <a href="#" class="hover:text-white transition">About Me</a>
+                <a href="#" class="hover:text-white transition">Skills</a>
+                <a href="#" class="hover:text-white transition">Projects</a>
+                <a href="#" class="hover:text-white transition">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="resume/resume.pdf" download>
+                    <button class="glow-btn-primary px-6 py-2 rounded-xl font-bold text-sm">
+                        Download Resume
+                    </button>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex items-center justify-center pt-20 px-6">
+        <div class="max-w-7xl w-full grid md:grid-cols-2 gap-12 items-center">
+
+            <div class="space-y-6">
+                <h2 class="text-6xl font-bold leading-tight" style="font-family: 'Montserrat';">
+                    Hi, I'm <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-500">
+                        Hasnain Kabir.
+                    </span>
+                </h2>
+                <div class="text-2xl text-gray-400 font-light">
+                    A passionate <span id="typed" class="text-cyan-400 font-medium"></span>
+                </div>
+
+                <div class="flex space-x-4 pt-4">
+                    <button class="glow-btn-primary px-8 py-3 rounded-xl font-bold">Hire Me</button>
+                    <a href="https://github.com/HasnainKhan02/JS_practice" target="_blank"><button
+                            class="glass border border-gray-700 px-8 py-3 rounded-xl font-bold hover:bg-white/10 transition">View
+                            Projects</button></a>
+                </div>
+
+                <div class="flex space-x-6 pt-6 text-2xl text-gray-500">
+                    <a href="https://github.com/HasnainKhan02/JS_practice" target="_blank"
+                        class="hover:text-white transition"><i class="fab fa-github"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="flex justify-center relative">
+                <div class="glass p-8 rounded-[40px] relative">
+                    <div class="hexagon-wrapper">
+                        <div class="hexagon-inner">
+                            <img src="images/my_pic.jpeg" alt="Hasnain Kabir">
+                        </div>
+                    </div>
+                    <div
+                        class="absolute -bottom-10 left-1/2  w-full max-w-[350px] glass p-6 rounded-2xl flex justify-between text-center">
+                        <div>
+                            <p class="text-xl font-bold text-cyan-400">20+</p>
+                            <p class="text-[10px] uppercase text-gray-400">Projects</p>
+                        </div>
+                        <div class="border-x border-white/10 px-6">
+                            <p class="text-xl font-bold text-purple-400">10+</p>
+                            <p class="text-[10px] uppercase text-gray-400">Clients</p>
+                        </div>
+                        <div>
+                            <p class="text-xl font-bold text-rose-400">5+</p>
+                            <p class="text-[10px] uppercase text-gray-400">Stacks</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center" style="font-family: 'Montserrat';">
+            Technical <span class="text-indigo-400">Toolkit</span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div
+                class="md:col-span-2 glass p-8 rounded-[2rem] hover:border-indigo-500/50 transition-all duration-500 group">
+                <div class="flex justify-between items-start mb-6">
+                    <i
+                        class="fab fa-react text-5xl text-cyan-400 group-hover:rotate-180 transition-transform duration-1000"></i>
+                    <span class="text-xs font-mono text-gray-500">CORE STACK</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Frontend Development</h3>
+                <p class="text-gray-400 text-sm">Expertise in HTML5, CSS3, JavaScript, and React.js. Building
+                    responsive, high-performance web apps.</p>
+            </div>
+
+            <div class="glass p-8 rounded-[2rem] flex flex-col justify-between hover:bg-white/5 transition-all">
+                <i class="fas fa-code-branch text-3xl text-purple-400 mb-4"></i>
+                <div>
+                    <h3 class="font-bold text-lg">JavaScript</h3>
+                    <p class="text-xs text-gray-500 mt-2">Working on JS</p>
+                </div>
+            </div>
+
+            <div class="glass p-8 rounded-[2rem] flex flex-col justify-between hover:bg-white/5 transition-all">
+                <i class="fas fa-palette text-3xl text-pink-500 mb-4"></i>
+                <div>
+                    <h3 class="font-bold text-lg">UI/UX Design</h3>
+                    <p class="text-xs text-gray-500 mt-2">Figma, Canva, and modern Social Media Marketing design.</p>
+                </div>
+            </div>
+
+            <div
+                class="md:col-span-2 glass bg-gradient-to-r from-indigo-900/20 to-transparent p-8 rounded-[2rem] border-l-4 border-indigo-500">
+                <div class="flex items-center space-x-4 mb-4">
+                    <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <span class="text-xs font-bold tracking-widest text-indigo-300">CURRENTLY LEARNING</span>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">AI, ML</h3>
+                <p class="text-gray-400 text-sm">Exploring Python, Pandas.</p>
+            </div>
+
+            <!-- <div class="md:col-span-2 glass p-8 rounded-[2rem] flex items-center justify-between">
+                <div>
+                    <h3 class="font-bold text-lg">Social Media Marketing</h3>
+                    <p class="text-xs text-gray-500">Helping brands grow with data-driven design.</p>
+                </div>
+                <i class="fas fa-chart-line text-4xl text-blue-400 opacity-30"></i>
+            </div> -->
+        </div>
+    </section>
+
+    <section class="py-24 px-6 max-w-7xl mx-auto bg-[#0F172A]">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div>
+                <h2 class="text-4xl font-bold mb-4" style="font-family: 'Montserrat';">Featured <span
+                        class="text-rose-500">Projects</span></h2>
+                <p class="text-gray-400">A collection of my best work in Web Dev and Java.</p>
+            </div>
+            <div class="flex space-x-3">
+                <button
+                    class="px-5 py-2 rounded-full glass border border-white/10 text-xs hover:bg-white/10">All</button>
+                <button class="px-5 py-2 rounded-full glass border border-white/10 text-xs hover:bg-white/10">Web
+                    App</button>
+                <button
+                    class="px-5 py-2 rounded-full glass border border-white/10 text-xs hover:bg-white/10">Java</button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="group relative overflow-hidden rounded-[2.5rem] bg-gray-900 aspect-[4/5]">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800"
+                    class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-30 transition-all duration-700"
+                    alt="Food Project">
+
+                <div
+                    class="absolute inset-0 p-8 flex flex-col justify-end translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                    <div
+                        class="flex space-x-2 mb-4 opacity-100 group-hover:opacity-100 transition-opacity duration-700">
+                        <span
+                            class="text-[10px] bg-rose-500/20 text-rose-400 border border-rose-500/30 px-3 py-1 rounded-full">React</span>
+                        <span
+                            class="text-[10px] bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 px-3 py-1 rounded-full">Tailwind</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Food Delivery Platform</h3>
+                    <p
+                        class="text-gray-400 text-sm mb-6 line-clamp-2 opacity-110 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                        A fully responsive food ordering UI with cart functionality and animated menu transitions.
+                    </p>
+                    <div
+                        class="flex space-x-4 opacity-10 group-hover:opacity-100 transition-opacity duration-700 delay-200">
+                        <a href="#"
+                            class="text-white bg-white/10 w-12 h-12 flex items-center justify-center rounded-full hover:bg-rose-500 transition-colors"><i
+                                class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/HasnainKhan02/JS_practice"
+                            class="text-white bg-white/10 w-12 h-12 flex items-center justify-center rounded-full hover:bg-indigo-500 transition-colors"><i
+                                class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-[2.5rem] bg-gray-900 aspect-[4/5]">
+                <img src="https://images.unsplash.com/photo-1544261480-1b10d1bf0a9d?w=600&auto=format&fit=crop&q=60"
+                    class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-30 transition-all duration-700"
+                    alt="Jewelry Project">
+
+                <div
+                    class="absolute inset-0 p-8 flex flex-col justify-end translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                    <div
+                        class="flex space-x-2 mb-4 opacity-110 group-hover:opacity-100 transition-opacity duration-700">
+                        <span
+                            class="text-[10px] bg-amber-500/20 text-amber-400 border border-amber-500/30 px-3 py-1 rounded-full">React</span>
+                        <span
+                            class="text-[10px] bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 px-3 py-1 rounded-full">Tailwind</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Jewelry Showcase</h3>
+                    <p
+                        class="text-gray-400 text-sm mb-6 line-clamp-2 opacity-110 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                        An elegant, luxury e-commerce interface featuring high-resolution galleries and smooth product
+                        filtering.
+                    </p>
+                    <div
+                        class="flex space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-200">
+                        <a href="#"
+                            class="text-white bg-white/10 w-12 h-12 flex items-center justify-center rounded-full hover:bg-amber-500 transition-colors"><i
+                                class="fas fa-external-link-alt"></i></a>
+                        <a href="https://github.com/HasnainKhan02/JS_practice"
+                            class="text-white bg-white/10 w-12 h-12 flex items-center justify-center rounded-full hover:bg-indigo-500 transition-colors"><i
+                                class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-[2.5rem] bg-gray-900 aspect-[4/5]">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=800"
+                    class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-30 transition-all duration-700"
+                    alt="Electronics Project">
+
+                <div
+                    class="absolute inset-0 p-8 flex flex-col justify-end translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                    <div
+                        class="flex space-x-2 mb-4 opacity-110 group-hover:opacity-100 transition-opacity duration-700">
+                        <span
+                            class="text-[10px] bg-blue-500/20 text-blue-400 border border-blue-500/30 px-3 py-1 rounded-full">HTML/CSS</span>
+                        <span
+                            class="text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-3 py-1 rounded-full">UI
+                            Design</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Electronics Workshop</h3>
+                    <p
+                        class="text-gray-400 text-sm mb-6 line-clamp-2 opacity-110 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                        A clean business website for an electronics repair shop featuring service listings and customer
+                        booking flow.
+                    </p>
+                    <div
+                        class="flex space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-200">
+                        <a href="#"
+                            class="text-white bg-white/10 w-12 h-12 flex items-center justify-center rounded-full hover:bg-blue-500 transition-colors"><i
+                                class="fas fa-external-link-alt"></i></a>
+                        <a href="#"
+                            class="text-white bg-white/10 w-12 h-12 flex items-center justify-center rounded-full hover:bg-indigo-500 transition-colors"><i
+                                class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4" style="font-family: 'Montserrat';">Expert <span
+                    class="text-cyan-400">Services</span></h2>
+            <p class="text-gray-400 max-w-2xl mx-auto text-sm">Providing high-performance web solutions and professional
+                design assets for global brands.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div
+                class="glass p-10 rounded-[3rem] border-b-4 border-indigo-500 hover:bg-indigo-500/5 transition-all group">
+                <div
+                    class="w-16 h-16 bg-indigo-500/20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-layer-group text-2xl text-indigo-400"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Frontend Development</h3>
+                <ul class="text-sm text-gray-500 space-y-3">
+                    <li><i class="fas fa-check text-indigo-500 mr-2"></i> Single Page Apps (React)</li>
+                    <li><i class="fas fa-check text-indigo-500 mr-2"></i> Performance Optimization</li>
+                    <li><i class="fas fa-check text-indigo-500 mr-2"></i> Responsive Layouts</li>
+                </ul>
+            </div>
+
+            <div class="glass p-10 rounded-[3rem] border-b-4 border-cyan-500 hover:bg-cyan-500/5 transition-all group">
+                <div
+                    class="w-16 h-16 bg-cyan-500/20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-bezier-curve text-2xl text-cyan-400"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">UI/UX & Branding</h3>
+                <ul class="text-sm text-gray-500 space-y-3">
+                    <li><i class="fas fa-check text-cyan-500 mr-2"></i> Figma/Canva Pro Design</li>
+                    <li><i class="fas fa-check text-cyan-500 mr-2"></i> Modern Landing Pages</li>
+                    <li><i class="fas fa-check text-cyan-500 mr-2"></i> Social Media Identity</li>
+                </ul>
+            </div>
+
+            <div class="glass p-10 rounded-[3rem] border-b-4 border-rose-500 hover:bg-rose-500/5 transition-all group">
+                <div
+                    class="w-16 h-16 bg-rose-500/20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-rocket text-2xl text-rose-400"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Portfolio Mastery</h3>
+                <ul class="text-sm text-gray-500 space-y-3">
+                    <li><i class="fas fa-check text-rose-500 mr-2"></i> Personal Branding</li>
+                    <li><i class="fas fa-check text-rose-500 mr-2"></i> Resume-to-Web Conversion</li>
+                    <li><i class="fas fa-check text-rose-500 mr-2"></i> Smooth Animations</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="glass rounded-[4rem] p-12 md:p-20 relative overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-64 h-64 bg-purple-600/20 blur-[100px]"></div>
+
+            <div class="grid md:grid-cols-2 gap-16 relative z-10">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6" style="font-family: 'Montserrat';">Let's <span
+                            class="text-indigo-400">Talk</span></h2>
+                    <p class="text-gray-400 mb-10">Have a project in mind or want to hire me for your team? Send a
+                        message.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 glass rounded-full flex items-center justify-center text-indigo-400">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <span class="text-sm font-medium">hk4547124@gmail.com</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 glass rounded-full flex items-center justify-center text-cyan-400">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <span class="text-sm font-medium">Swabi, KP, Pakistan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="#" class="space-y-4">
+                    <input type="text" placeholder="Your Name"
+                        class="w-full bg-white/5 border border-white/10 p-4 rounded-2xl focus:outline-none focus:border-indigo-500 transition-colors text-sm">
+                    <input type="email" placeholder="Email Address"
+                        class="w-full bg-white/5 border border-white/10 p-4 rounded-2xl focus:outline-none focus:border-indigo-500 transition-colors text-sm">
+                    <textarea rows="4" placeholder="Your Message"
+                        class="w-full bg-white/5 border border-white/10 p-4 rounded-2xl focus:outline-none focus:border-indigo-500 transition-colors text-sm"></textarea>
+                    <button type="submit"
+                        class="w-full glow-btn-primary py-4 rounded-2xl font-bold uppercase tracking-widest text-xs hover:scale-[1.02] active:scale-[0.98] transition-transform">
+                        Send Message <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center">
+        <p class="text-gray-500 text-xs">© 2026 Hasnain Kabir. Built with Passion & Caffeine.</p>
+    </footer>
+
+    <button id="scrollTop"
+        class="fixed bottom-10 right-10 w-12 h-12 glass rounded-xl hidden items-center justify-center hover:bg-white/10 transition z-[100]">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        var typed = new Typed('#typed', {
+            strings: [
+                'Frontend Developer',
+                'Computer Science Student',
+                'Future Developer'
+            ],
+            typeSpeed: 60,
+            backSpeed: 30,
+            loop: true
+        });
+        // Back to Top Visibility
+        const scrollBtn = document.getElementById('scrollTop');
+        window.onscroll = function () {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                scrollBtn.style.display = "flex";
+            } else {
+                scrollBtn.style.display = "none";
+            }
+        };
+
+        // Scroll to top execution
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
